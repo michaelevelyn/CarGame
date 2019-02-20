@@ -6,12 +6,13 @@ let car = {
     mileage: 0,
     IsWorking: true,
 
-    DriveToWork(){
+    driveToWork(){
         alert(`Old Mileage: ${this.mileage}`);
         this.mileage += 10;
         alert(`New Mileage: ${this.mileage}`);
     },
-    DriveAroundUSA(){
+
+    driveAroundUSA(){
         alert(`Old Mileage: ${this.mileage}`);
         this.mileage += 7000;
         alert(`New Mileage: ${this.mileage}`);
@@ -19,7 +20,7 @@ let car = {
         this.IsWorking = false;
     },
 
-    getTuneup(){
+    getTuneUp(){
         alert('Car is fixed and is ready to go!')
         this.IsWorking = true;
     },
@@ -31,39 +32,40 @@ let car = {
 
 //FUNCTIONS
 // Logs all out car's current stats to the console
-const rewriteStats=()=>{
+reWriteStats=()=>{
     console.log(`Make: ${car.make}`);
     console.log(`Model: ${car.model}`);
     console.log(`Color: ${car.color}`);
     console.log(`Mileage: ${car.mileage}`);
     console.log(`IsWorking: ${car.working}`);
-    console.log('----------------------------------')
+    console.log('----------------------------------');
 
 }   
 
-// Main Process
+// MAIN PROCESS
 // Captuers keyboard input. Depending on the letter pressed it will "call" (execute) different functions.
-document.onkeyup=(event) => {
-
+document.onkeyup= (event) => {
     // Captures the key press, converts it to the lowercase, and saves it to the variable.
     let letter = String.fromCharCode(event.keyCode).toLowerCase();
 
-    if {letter === 'd'}{
-        car.DriveToWork();
-        rewriteStats();
+    if (letter === "d") {
+        car.driveToWork();
+        reWriteStats();
     }
 
-    if {letter === 'r'}{
-        car.DriveAroundUSA();
-        rewriteStats();
+    if (letter === "r") {
+        car.driveAroundUSA();
+        reWriteStats();
     }
 
-    if {letter === 'h'}{
-        car.DriveAroundUSA();
-        rewriteStats();
+    if (letter === 't') {
+        car.getTuneUp();
+        reWriteStats();
     }
 
-    if {letter === 't'}{
+    if (letter === "h") {
         car.honk();
         rewriteStats();
     }
+
+}
